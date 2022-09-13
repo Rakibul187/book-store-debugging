@@ -92,11 +92,12 @@ const createCard = (book) => {
   div.classList.add("card");
 
   let overview = book.overview;
-
+  console.log(overview.length)
+  console.log(book)
   div.innerHTML = `
   <div class="image-container">
     <img
-      src="${book.Image}"
+      src="${book.image}"
       alt=""
     />
     <div class="button-container">
@@ -107,7 +108,7 @@ const createCard = (book) => {
   <div class="info-container">
     <h1>${book.name}</h1>
     <p>
-      ${overview}
+      ${overview.length > 80 ? overview.slice(0, 80) : overview}
     </p>
   </div>
 
