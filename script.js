@@ -92,8 +92,8 @@ const createCard = (book) => {
   div.classList.add("card");
 
   let overview = book.overview;
-  console.log(overview.length)
-  console.log(book)
+  // console.log(overview.length)
+  // console.log(book)
   div.innerHTML = `
   <div class="image-container">
     <img
@@ -108,7 +108,7 @@ const createCard = (book) => {
   <div class="info-container">
     <h1>${book.name}</h1>
     <p>
-      ${overview.length > 80 ? overview.slice(0, 80) : overview}
+      ${overview.length > 80 ? overview.slice(0, 80) + "..." : overview}
     </p>
   </div>
 
@@ -131,7 +131,7 @@ const addToWishlist = (id) => {
 
 const displayCart = () => {
   const cart = getCartItems();
-  console.log(cart);
+  // console.log(cart);
 
   cart.forEach((book) => {
     const div = createCard(book);
